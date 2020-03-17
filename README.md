@@ -1,5 +1,5 @@
 ## Goal:
-Project was created to help me understand the differences between the most popular react validation libraries.    
+Project was created to help me understand the differences between the most popular react form libraries.    
 
 ## Available Scripts
 
