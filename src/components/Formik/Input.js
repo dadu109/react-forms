@@ -13,9 +13,9 @@ const FieldWrapper = styled.div`
     & > div {
       position: absolute;
       bottom: 0;
-      width: 150%;
+      width: 100%;
       height: 3px;
-      background: linear-gradient(90deg, #44fff4 0%, #15e198 50%, #44fff4 100%);
+      background: linear-gradient(90deg, #15e198 0%, #44fff4 100%);
       & > span {
         position: absolute;
         margin: 0;
