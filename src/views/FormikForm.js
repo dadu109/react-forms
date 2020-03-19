@@ -1,13 +1,21 @@
 import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import styled from "styled-components";
 import Heading from "../components/Formik/Heading";
 import Input from "../components/Formik/Input";
 import Checkbox from "../components/Formik/Checkbox";
+import Button from "../components/Formik/Button";
+
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+`;
 
 const FormikForm = () => {
   return (
-    <>
+    <Wrapper>
       <Heading>SIGN UP</Heading>
       <Formik
         initialValues={{
@@ -39,22 +47,18 @@ const FormikForm = () => {
           }, 400);
         }}
       >
-        {props => {
-          return (
-            <Form autoComplete="off">
-              <Input placeholder="E-mail" name="email" type="email" />
-              <Input placeholder="First Name" name="firstName" type="text" />
-              <Input placeholder="Last Name" name="lastName" type="text" />
-              <Input placeholder="Password" name="password" type="password" />
-              <Checkbox name="acceptedTerms" id="acceptedTerms">
-                I accept the <a href="#"> terms</a>
-              </Checkbox>
-              <button type="submit">Submit</button>
-            </Form>
-          );
-        }}
+        <Form autoComplete="off">
+          <Input placeholder="E-mail" name="email" type="email" />
+          <Input placeholder="First Name" name="firstName" type="text" />
+          <Input placeholder="Last Name" name="lastName" type="text" />
+          <Input placeholder="Password" name="password" type="password" />
+          <Checkbox name="acceptedTerms" id="acceptedTerms">
+            I accept the <a href="#"> terms</a>
+          </Checkbox>
+          <Button type="submit">Sign up</Button>
+        </Form>
       </Formik>
-    </>
+    </Wrapper>
   );
 };
 

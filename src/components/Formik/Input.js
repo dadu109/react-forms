@@ -4,7 +4,7 @@ import { useField } from "formik";
 
 const FieldWrapper = styled.div`
   height: 62px;
-  width: 240px;
+  width: 100%;
   margin-bottom: 30px;
   div {
     position: relative;
