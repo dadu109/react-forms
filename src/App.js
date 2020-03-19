@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import FormikForm from "./views/FormikForm";
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   *,*::before,*::after{
@@ -15,12 +15,12 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   return (
-      <>
-          <GlobalStyle/>
-          <div className="App">
-              <FormikForm/>
-          </div>
-      </>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        <FormikForm />
+      </div>
+    </>
   );
 }
 
