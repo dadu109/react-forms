@@ -66,13 +66,33 @@ const Menu = styled.div`
   left: 0;
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
   transform: ${props => (props.open ? "translateX(0)" : "translateX(-100%)")};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2em;
+    padding: 10px;
+    //font-weight: bold;
+    //background: linear-gradient(to bottom, #fff 0%, #fff 100%) repeat-x 0 100%;
+    //background-size: 4px 4px;
+    //transition: background-size 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
+    //  color 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+    //&:hover {
+    //  color: #15e198;
+    //  background-size: 4px 60px;
+    //}
+  }
 `;
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ children }) => {
   const [open, setOpen] = useState(false);
   return (
     <Wrapper open={open}>
-      <Menu open={open} />
+      <Menu open={open}>{children}</Menu>
       <Burger
         onClick={() => {
           setOpen(!open);
