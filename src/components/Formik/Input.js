@@ -8,14 +8,14 @@ const FieldWrapper = styled.div`
   margin-bottom: 30px;
   div {
     position: relative;
-    height: 40px;
+    height: 50px;
+    overflow: hidden;
     & > div {
       position: absolute;
       bottom: 0;
-      width: 100%;
+      width: 150%;
       height: 3px;
-      background: linear-gradient(90deg, #44fff4 0%, #15e198 121.83%);
-      overflow: hidden;
+      background: linear-gradient(90deg, #44fff4 0%, #15e198 50%, #44fff4 100%);
       & > span {
         position: absolute;
         margin: 0;
@@ -72,10 +72,11 @@ const FieldWrapper = styled.div`
 
 const Input = ({ placeholder, ...props }) => {
   const [field, meta] = useField(props);
+
   return (
     <FieldWrapper value={meta.value} error={meta.error} touched={meta.touched}>
       <div>
-        <input className="text-input" {...field} {...props} />
+        <input {...field} {...props} />
         <label htmlFor={props.name}>{placeholder}</label>
         <div>
           <span />
