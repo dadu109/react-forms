@@ -3,13 +3,18 @@ import styled from "styled-components";
 import { useField } from "formik";
 
 const CheckboxWrapper = styled.div`
+  margin-bottom: 30px;
+
   a {
     color: #15e198;
     text-decoration: none;
     margin-left: 5px;
   }
-  input[type="checkbox"] {
-    display: none;
+  input {
+    //display: none;
+    position: absolute;
+    top: -20px;
+    left: -20px;
     pointer-events: none;
 
     & + label {
@@ -53,6 +58,11 @@ const CheckboxWrapper = styled.div`
       }
     }
   }
+  div {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #d30e0e;
+  }
 `;
 
 const Checkbox = ({ children, ...props }) => {
@@ -68,7 +78,7 @@ const Checkbox = ({ children, ...props }) => {
         {children}
       </label>
 
-      {meta.touched && meta.error ? <div>{meta.error}</div> : null}
+      <div>{meta.touched && meta.error ? meta.error : null}</div>
     </CheckboxWrapper>
   );
 };
