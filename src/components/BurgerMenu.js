@@ -76,15 +76,21 @@ const Menu = styled.div`
     color: #fff;
     font-size: 2em;
     padding: 10px;
-    //font-weight: bold;
-    //background: linear-gradient(to bottom, #fff 0%, #fff 100%) repeat-x 0 100%;
-    //background-size: 4px 4px;
-    //transition: background-size 0.2s cubic-bezier(0.77, 0.2, 0.05, 1),
-    //  color 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
-    //&:hover {
-    //  color: #15e198;
-    //  background-size: 4px 60px;
-    //}
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      transform: translateX(-50%);
+      transition: width 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
+    }
+    &:hover::before {
+      width: 100%;
+    }
   }
 `;
 
