@@ -1,5 +1,6 @@
 import React from "react";
 import FormikForm from "./views/FormikForm";
+import Info from "./views/Info";
 import styled, { createGlobalStyle } from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import BurgerMenu from "./components/BurgerMenu";
@@ -50,9 +51,8 @@ function App() {
       <div className="app">
         <BurgerMenu>
           <Menu>
-            <Link to="/formik">Formik</Link>
-            <Link to="/react-hook-form">React Hook Form</Link>
-            <Link to="/redux-form">Redux Form</Link>
+            <Link to="/info">Info</Link>
+            <Link to="/">Formik</Link>
           </Menu>
           <span>
             Created with 🤍 by{" "}
@@ -67,7 +67,7 @@ function App() {
           </span>
         </BurgerMenu>
         <Switch className="App">
-          {/*  add formik path*/}
+          <Route path="/info" exact component={Info} />
           <Route path="/" exact component={FormikForm} />
         </Switch>
       </div>

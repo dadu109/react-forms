@@ -75,6 +75,7 @@ const Menu = styled.div`
     text-decoration: none;
     color: #fff;
     font-size: 2em;
+    font-weight: bold;
     padding: 10px;
     position: relative;
     &::before {
@@ -83,7 +84,7 @@ const Menu = styled.div`
       top: 100%;
       left: 50%;
       width: 0;
-      height: 2px;
+      height: 4px;
       background-color: #fff;
       transform: translateX(-50%);
       transition: width 0.2s cubic-bezier(0.77, 0.2, 0.05, 1);
